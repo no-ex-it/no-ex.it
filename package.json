@@ -1,6 +1,6 @@
 {
-  "name": "alindner.org-new",
-  "version": "0.1.0",
+  "name": "no-ex.it",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
