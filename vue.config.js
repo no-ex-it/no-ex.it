@@ -35,16 +35,8 @@ module.exports = {
     lintOnSave: false,
     pluginOptions: {},
     chainWebpack: config => {
-        config.resolve.alias
-            .set("@", resolve("src"));
+        config.resolve.alias.set("@", resolve("src"));
     },
     devServer: {
-        proxy: {
-            '/api': {
-                target: 'http://localhost:8080/no-ex.it/', // this configuration needs to correspond to the Spring Boot backends' application.properties server.port
-                ws: true,
-                changeOrigin: true
-            }
-        }
     },
 };
