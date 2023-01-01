@@ -13,4 +13,7 @@ ADD server /app/server
 WORKDIR /app
 EXPOSE 8090
 
-CMD ["./server","serve","--http","localhost:8090","--publicDir","dist","--indexFallback"]
+ARG CAPROVER_GIT_COMMIT_SHA=Default
+ENV CAPROVER_GIT_COMMIT_SHA=${CAPROVER_GIT_COMMIT_SHA}
+
+CMD ["/app/server","serve","--http","127.0.0.1:8090","--publicDir","dist","--indexFallback"]
