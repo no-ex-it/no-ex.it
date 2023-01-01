@@ -16,4 +16,4 @@ EXPOSE 8090
 ARG CAPROVER_GIT_COMMIT_SHA=Default
 ENV CAPROVER_GIT_COMMIT_SHA=${CAPROVER_GIT_COMMIT_SHA}
 
-CMD ["/app/server","serve","--http","127.0.0.1:8090","--publicDir","dist","--indexFallback"]
+CMD ["/app/server","serve","--http","0.0.0.0:8090","--publicDir","dist","--indexFallback"]
