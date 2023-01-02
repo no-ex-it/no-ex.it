@@ -4,10 +4,12 @@ ADD . /app
 WORKDIR /app
 RUN yarn install
 RUN yarn run build
+RUN apt-get update; apt-get install ca-certificates
 
 FROM scratch
 
 COPY --from=builder /app/dist /app/dist
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 ADD server /app/server
 
 WORKDIR /app
